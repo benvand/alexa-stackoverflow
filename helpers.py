@@ -36,8 +36,8 @@ class AppCheck(object):
     def __call__(self, event, session):
         self.incoming_app_id = event['session']['application']['applicationId']
         # Prevent someone else from configuring a skill that sends requests to this
-        # if not self.check_correct_app_id(self.incoming_app_id):
-        #     raise ValueError("Invalid Application ID {app_id}".format(app_id=self.incoming_app_id))
+        if not self.check_correct_app_id(self.incoming_app_id):
+            raise ValueError("Invalid Application ID {app_id}".format(app_id=self.incoming_app_id))
         return self.function(event, session)
 
     def check_correct_app_id(self, id):
