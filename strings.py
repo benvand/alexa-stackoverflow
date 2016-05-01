@@ -1,3 +1,4 @@
+"""Strings for Alexa to say"""
 from settings import SITE_NAME_SPEAKABLE
 
 SITE_NAME = SITE_NAME_SPEAKABLE

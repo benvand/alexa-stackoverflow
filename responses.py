@@ -1,3 +1,5 @@
+"""Business logic to respond to a given request."""
+
 import urllib2
 import requests
 
@@ -77,6 +79,5 @@ def get_question_response(intent, session):
         votes=site_answer_score,
         answer=site_answer_body
     )
-    return build_response(session_attributes, build_speechlet_response(
-        card_title, speech_output, reprompt_text, should_end_session)
-    )
+    speechlet_response = build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session)
+    return build_response(session_attributes, speechlet_response)

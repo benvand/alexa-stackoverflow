@@ -1,3 +1,5 @@
+"""Helper functions to be used app wide."""
+
 from HTMLParser import HTMLParser
 
 import logging

@@ -1,17 +1,18 @@
-WhatsMyColorIntent what's my favorite color
-WhatsMyColorIntent what is my favorite color
-WhatsMyColorIntent what's my color
-WhatsMyColorIntent what is my color
-WhatsMyColorIntent my color
-WhatsMyColorIntent my favorite color
-WhatsMyColorIntent get my color
-WhatsMyColorIntent get my favorite color
-WhatsMyColorIntent give me my favorite color
-WhatsMyColorIntent give me my color
-WhatsMyColorIntent what my color is
-WhatsMyColorIntent what my favorite color is
-WhatsMyColorIntent yes
-WhatsMyColorIntent yup
-WhatsMyColorIntent sure
-WhatsMyColorIntent yes please
-MyColorIsIntent my favorite color is {Color}
+QuestionAsked how do I {Delete all py c files|question}
+QuestionAsked how can I {Delete a folder|question}
+QuestionAsked how does one {remove a folder|question}
+QuestionAsked how to {reboot ubuntu|question}
+QuestionAsked how do you {reboot ubuntu on the command line|question}
+QuestionAsked how can you {list running processes|question}
+QuestionAsked how {find remaining diskspace|question}
+QuestionAsked create {list running processes|question}
+QuestionAsked list {files in a folder|question}
+QuestionAsked find {a file|question}
+QuestionAsked display {running processes|question}
+QuestionAsked {show remaining disk space|question}
+QuestionAsked to {download ubuntu iso|question}
+QuestionAsked how to {show process on a give port|question}
+QuestionAsked how to {build an ap for alexa|question}
+QuestionAsked how to {show memory usage|question}
+QuestionAsked different ways to {list running processes|question}
+QuestionAsked get {disk space on Ubuntu|question}

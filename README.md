@@ -17,8 +17,3 @@ Ask StackOverflow get disk space on Ubuntu
 ### Keywords
 
 stackoverflow code tech coding answers stack overflow over flow
-
-
-### ARN
-
-arn:aws:lambda:us-east-1:885324466664:function:alexa-stackoverflow

@@ -1,3 +1,4 @@
+"""Define handlers for each intent."""
 from helpers import function_log, AppCheck
 from responses import get_welcome_response, get_session_end_response, get_question_response
 

@@ -1,4 +1,4 @@
-"""Miscellaneous settings"""
+"""Basic App settings"""
 
 from urlparse import urljoin
 # Amazon application id
@@ -10,12 +10,11 @@ from urlparse import urljoin
 # App settings
 SITE_NAME = "stackoverflow"
 SITE_NAME_SPEAKABLE = "Stack Overflow"
-
+APP_ID = '55cecd87-e312-4679-a97e-469a5e3bfcb4'
 
 # URL Settings
 BASE_API_URL = 'https://api.stackexchange.com/2.2/'
 BASE_QUERY_PARAMS = '?order=asc&site={site_name}'.format(site_name=SITE_NAME)
-
 
 ASK_QUESTION_ENDPOINT = BASE_API_URL + 'search/advanced' + BASE_QUERY_PARAMS + '&sort=score&q={question}'
 
