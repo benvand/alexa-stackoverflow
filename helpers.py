@@ -38,7 +38,7 @@ class AppCheck(object):
         # Prevent someone else from configuring a skill that sends requests to this
         if not self.check_correct_app_id(self.incoming_app_id):
             raise ValueError("Invalid Application ID {app_id}".format(app_id=self.incoming_app_id))
-        return self.function(requestq, session)
+        return self.function(request, session)
 
     def check_correct_app_id(self, id):
         """Ensure the incoming id matches our app id"""
