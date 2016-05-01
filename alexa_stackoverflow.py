@@ -26,7 +26,7 @@ def route(event, context):
         # Run this _as well_ as the desired request type handler
         REQUEST_TYPE_HANDLERS['new'](event, event['session'])
     request_type = event['request']['type']
-    return REQUEST_TYPE_HANDLERS[request_type](event, event['session'])
+    return REQUEST_TYPE_HANDLERS[request_type](event['request'], event['session'])
 
 # This is named in our Amazon lambda function settings as the handler for this app
 lambda_handler = route

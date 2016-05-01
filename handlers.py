@@ -23,12 +23,12 @@ def on_intent(request, session):
     function_log('on_intent', request, session)
 
     intent = request['intent']
-    intent_name = request['intent']['name']
+    intent_name = intent['name']
 
     # Dispatch to your skill's intent handlers
     if intent_name == "QuestionAsked":
         return get_question_response(intent, session)
-    elif intent_name == "AMAZON.HelpIntent":
+    elif intent_name == "AMAZON.HelpIntent" or not intent_name:
         return get_welcome_response()
     elif intent_name == "AMAZON.CancelIntent" or intent_name == "AMAZON.StopIntent":
         return get_session_end_response()
