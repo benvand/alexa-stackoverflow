@@ -26,7 +26,7 @@ SEARCHING = 'Searching ' + SITE_NAME + ' for {question} '
 # Report of what has been found
 REPORT_ON_QUESTION = "The closest question on" + SITE_NAME + ' is {question}'
 REPORT_ON_ANSWER = SEARCHING + "The top rated article on " + SITE_NAME + " by {answerer} with {votes} upvotes is {answer}."
-REPORT = S_BREAK.join(REPORT_ON_QUESTION, REPORT_ON_ANSWER)
+REPORT = S_BREAK.join([REPORT_ON_QUESTION, REPORT_ON_ANSWER])
 
 # Failure to parse and reprompt
 FAILURE = "I'm sorry, I didn't catch your question. Please try again."
