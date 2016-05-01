@@ -18,7 +18,7 @@ For example, try, Ask {site_name}{break1} what is node j s.
 """.format(site_name=SITE_NAME, break1=S_BREAK)
 
 WELCOME = ("Welcome to the Alexa {site_name} Skill. " + WELCOME_REPROMPT).format(site_name=SITE_NAME)
-GOODBYE = "Thank you for trying the Alexa {site-name}.".format(site_name=SITE_NAME)
+GOODBYE = "Thank you for trying the Alexa {site_name}.".format(site_name=SITE_NAME)
 
 # Humanisation string
 SEARCHING = 'Searching ' + SITE_NAME + ' for {question} '
