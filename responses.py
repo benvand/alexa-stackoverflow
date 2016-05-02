@@ -39,13 +39,13 @@ def get_question_response(intent, session):
     speech_output = strings.FAILURE
     reprompt_text = strings.PROMPT_ASK
 
-    if not 'question' in intent['slots']:
+    if not 'QuestionAsked' in intent['slots']:
         speechlet_response = build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session)
         return build_response(session_attributes, speechlet_response)
 
-    encoded_question = urllib2.quote(intent['slots']['question']['value'])
+    encoded_question = urllib2.quote(intent['slots']['QuestionAsked']['value'])
 
-    url = settings.ASK_QUESTION_URL.format(queston=encoded_question)
+    url = settings.ASK_QUESTION_ENDPOINT.format(question=encoded_question)
     resp = requests.get(url).json()
 
     try:
@@ -58,7 +58,7 @@ def get_question_response(intent, session):
     site_question_question_id = site_question['question_id']
     site_question_title = site_question['title']
 
-    url = settings.GET_ANSWERS_ENDPOINT.format(queston_id=site_question_question_id)
+    url = settings.GET_ANSWERS_ENDPOINT.format(question_id=site_question_question_id)
     resp = requests.get(url).json()
 
     try:
