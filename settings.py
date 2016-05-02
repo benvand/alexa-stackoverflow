@@ -12,7 +12,7 @@ SITE_NAME = "stackoverflow"
 SITE_NAME_SPEAKABLE = "Stack Overflow"
 BASE_AP_ID = 'amzn1.echo-sdk-ams.app.'
 APP_UID = '55cecd87-e312-4679-a97e-469a5e3bfcb4'
-APP_ID = BASE_AP_ID + APP_UIDq
+APP_ID = BASE_AP_ID + APP_UID
 
 # URL Settings
 BASE_API_URL = 'https://api.stackexchange.com/2.2/'
