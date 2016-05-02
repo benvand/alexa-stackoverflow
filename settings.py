@@ -10,7 +10,9 @@ from urlparse import urljoin
 # App settings
 SITE_NAME = "stackoverflow"
 SITE_NAME_SPEAKABLE = "Stack Overflow"
-APP_ID = '55cecd87-e312-4679-a97e-469a5e3bfcb4'
+BASE_AP_ID = 'amzn1.echo-sdk-ams.app.'
+APP_UID = '55cecd87-e312-4679-a97e-469a5e3bfcb4'
+APP_ID = BASE_AP_ID + APP_UIDq
 
 # URL Settings
 BASE_API_URL = 'https://api.stackexchange.com/2.2/'
