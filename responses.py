@@ -70,7 +70,7 @@ def get_question_response(intent, session):
         site_answer = sorted(resp['items'][0]['answers'], key=lambda i: i['score'], reverse=True)[0]
     except (IndexError, KeyError) as e:
 
-        speech_output = strings.NO_ANSWERS.format(question=encoded_question) + e.message
+        speech_output = strings.NO_ANSWERS.format(question=encoded_question)
         speechlet_response = build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session)
         return build_response(session_attributes, speechlet_response)
 
