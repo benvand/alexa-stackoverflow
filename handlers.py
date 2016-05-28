@@ -33,10 +33,12 @@ def on_intent(request, session):
     elif intent_name == "AMAZON.CancelIntent" or intent_name == "AMAZON.StopIntent":
         return get_session_end_response()
     else:
-        raise ValueError("Invalid intent")
+
+        raise ValueError(request + session)
 
 @AppCheck
 def on_session_ended(request, session):
+
     """ Called when the user ends the session.
 
     Is not called when the skill returns should_end_session=true

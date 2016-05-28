@@ -1,11 +1,16 @@
 """Business logic to respond to a given request."""
-
+import logging
+import sys
 import urllib2
+
 import requests
 
-from helpers import build_response, build_speechlet_response, strip_tags
 import settings
 import strings
+from helpers import build_response, build_speechlet_response, strip_tags
+
+
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 
 def get_welcome_response():
@@ -38,16 +43,17 @@ def get_question_response(intent, session):
     should_end_session = True
     speech_output = strings.FAILURE
     reprompt_text = strings.PROMPT_ASK
-
-    if not 'QuestionAsked' in intent['slots']:
+    logging.info(intent)
+    if not 'question' in intent['slots']:
         speechlet_response = build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session)
         return build_response(session_attributes, speechlet_response)
 
-    encoded_question = urllib2.quote(intent['slots']['QuestionAsked']['value'])
-
+    encoded_question = urllib2.quote(intent['slots']['question']['value'])
+    logging.info(encoded_question)
     url = settings.ASK_QUESTION_ENDPOINT.format(question=encoded_question)
+    logging.info('Getting: ' + url)
     resp = requests.get(url).json()
-
+    logging.info(resp)
     try:
         site_question = resp['items'][0]
     except (IndexError, KeyError):
@@ -57,14 +63,14 @@ def get_question_response(intent, session):
 
     site_question_question_id = site_question['question_id']
     site_question_title = site_question['title']
-
+    logging.warn(site_question_title)
     url = settings.GET_ANSWERS_ENDPOINT.format(question_id=site_question_question_id)
     resp = requests.get(url).json()
-
     try:
-        site_answer = sorted(resp['items']['answers'], key=lambda i: i['score'], reverse=True)[0]
-    except (IndexError, KeyError):
-        speech_output = strings.NO_ANSWERS
+        site_answer = sorted(resp['items'][0]['answers'], key=lambda i: i['score'], reverse=True)[0]
+    except (IndexError, KeyError) as e:
+
+        speech_output = strings.NO_ANSWERS.format(question=encoded_question) + e.message
         speechlet_response = build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session)
         return build_response(session_attributes, speechlet_response)
 
@@ -72,12 +78,12 @@ def get_question_response(intent, session):
     site_answer_score = site_answer['score']
     site_answer_body = strip_tags(site_answer['body'])
 
-
     speech_output = strings.REPORT.format(
         question=site_question_title,
         answerer=site_answer_answerer,
         votes=site_answer_score,
         answer=site_answer_body
     )
+    logging.info(speech_output)
     speechlet_response = build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session)
     return build_response(session_attributes, speechlet_response)

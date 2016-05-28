@@ -1,9 +1,11 @@
 """Helper functions to be used app wide."""
+import logging, sys
 
 from HTMLParser import HTMLParser
 
-import logging
 import settings
+
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 
 class MLStripper(HTMLParser):

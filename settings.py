@@ -18,6 +18,6 @@ APP_ID = BASE_AP_ID + APP_UID
 BASE_API_URL = 'https://api.stackexchange.com/2.2/'
 BASE_QUERY_PARAMS = '?order=asc&site={site_name}'.format(site_name=SITE_NAME)
 
-ASK_QUESTION_ENDPOINT = BASE_API_URL + 'search/advanced' + BASE_QUERY_PARAMS + '&sort=score&q={question}'
+ASK_QUESTION_ENDPOINT = BASE_API_URL + 'search/advanced' + BASE_QUERY_PARAMS + '&sort=votes&q={question}'
 
 GET_ANSWERS_ENDPOINT = BASE_API_URL + 'questions/{question_id}' + BASE_QUERY_PARAMS + '&sort=votes&filter=!*1ShIjGxdqfo8*16Wj*cAZl_Uj)x5F0ytNr2MbPmP'
