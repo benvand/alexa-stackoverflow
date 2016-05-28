@@ -22,8 +22,8 @@ GOODBYE = "Thank you for trying the Alexa {site_name} app.".format(site_name=SIT
 
 
 # Report of what has been found
-REPORT_ON_QUESTION = "The closest question on " + SITE_NAME + ' is {question}'
-REPORT_ON_ANSWER = "The top rated answer on " + SITE_NAME + " by {answerer} with {votes} upvotes is {answer}."
+REPORT_ON_QUESTION = "The closest question match on " + SITE_NAME + ' is {question}...'
+REPORT_ON_ANSWER = "The top rated answer for that question by {answerer} with {votes} upvotes is {answer}."
 REPORT = S_BREAK.join([REPORT_ON_QUESTION, REPORT_ON_ANSWER])
 
 # Failure to parse and reprompt
