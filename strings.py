@@ -20,12 +20,10 @@ For example, try, Ask {site_name}{break1} what is node j s.
 WELCOME = ("Welcome to the Alexa {site_name} Skill. " + WELCOME_REPROMPT).format(site_name=SITE_NAME)
 GOODBYE = "Thank you for trying the Alexa {site_name} app.".format(site_name=SITE_NAME)
 
-# Humanisation string
-SEARCHING = 'Searching ' + SITE_NAME + ' for {question} '
 
 # Report of what has been found
 REPORT_ON_QUESTION = "The closest question on " + SITE_NAME + ' is {question}'
-REPORT_ON_ANSWER = SEARCHING + "The top rated answer on " + SITE_NAME + " by {answerer} with {votes} upvotes is {answer}."
+REPORT_ON_ANSWER = "The top rated answer on " + SITE_NAME + " by {answerer} with {votes} upvotes is {answer}."
 REPORT = S_BREAK.join([REPORT_ON_QUESTION, REPORT_ON_ANSWER])
 
 # Failure to parse and reprompt
@@ -33,5 +31,5 @@ FAILURE = "I'm sorry, I didn't catch your question. Please try again."
 PROMPT_ASK = "Your questions will be relayed to {site_name}.".format(site_name=SITE_NAME)
 
 # Nothing found responses
-NO_QUESTIONS = SEARCHING + "I'm sorry, that didn't return any results on {site_name}.".format(site_name=SITE_NAME)
+NO_QUESTIONS = "I'm sorry, that didn't return any results on {site_name}.".format(site_name=SITE_NAME)
 NO_ANSWERS = NO_QUESTIONS + "However there is a question waiting to be answered."
