@@ -10,7 +10,9 @@ The question will be determined by stackoverflow's search algorithm and and the 
 ### Example questions
 
 Ask StackOverflow What is node js?
+
 Ask StackOverflow how to remove all py c files
+
 Ask StackOverflow get disk space on Ubuntu
 
 
