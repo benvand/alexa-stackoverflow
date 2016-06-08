@@ -1,10 +1,9 @@
 """
-This sample demonstrates a simple skill built with the Amazon Alexa Skills Kit.
-The Intent Schema, Custom Slots, and Sample Utterances for this skill, as well
-as testing instructions are located at http://amzn.to/1LzFrj6
-
-For additional samples, visit the Alexa Skills Kit Getting Started guide at
-http://amzn.to/1LGWsLG
+This file effectively deals with routing the request. It's similar to a url router in that regard. Returning a given 
+function based on the request type (as determined by Alexa).
+I've proxied route to lambda_handler at the bottom to maintain consistent with Alexa documentation and examples. This
+is the name of the function we give when setting up our lambda function. It's our 'Everything is to be routed through 
+here' function
 """
 
 import handlers
